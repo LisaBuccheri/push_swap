@@ -6,7 +6,7 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:18:25 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/11/16 20:32:50 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/11/19 17:38:16 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -72,12 +72,12 @@ int	invert_sort(t_array *arr, int *array)
 
 }
 
-int	is_sort(t_array *arr, int *array)
+int	is_sort(int size, int *array)
 {
 	int	i;
 
 	i = 0;
-	while (i < arr->size_a - 1)
+	while (i < size - 1)
 	{
 		if (array[i] > array[i + 1])
 			return (0);
@@ -100,18 +100,13 @@ int	main(int argc, char *argv[])
 	arr.nb_move = 0;
 	arr.g_arr = init_array(argc, argv, 'a');
 	arr.g_size = argc - 1;
+	arr.g_arr = sort_tempo(arr.g_arr, arr.g_size);
 	t = init_array(argc, argv, 'a');
-	t = sort_tempo(t, &arr);
-	i = 0;
-	while (i < arr.g_size)
-	{
-		write (1, "\narray g: ", 10);
-		ft_putnbr(arr.g_arr[i++]);
-	}
+	t = sort_tempo(t, arr.size_a);
 	if (argc == 4)
-		printf("nombre de move: %d\n", three_nb(&arr));
+		printf("nombre de move: %d\n", sort_three(&arr));
 	else
-		sort2(t, &arr);
+		radix_sort(&arr);		//sort(&arr);		//sort2(t, &arr);
 	while (i < argc - 1)
 	{
 		write (1, "\narray A: ", 10);
@@ -120,8 +115,8 @@ int	main(int argc, char *argv[])
 	i = 0;
 	while (i < argc - 1)
 	{
-		write (1, "\narray T: ", 10);
-		ft_putnbr(t[i++]);
+		write (1, "\narray B: ", 10);
+		ft_putnbr(arr.b[i++]);
 	}
 	printf("\nnumber of movement: %d\n", arr.nb_move);
 	return (0);

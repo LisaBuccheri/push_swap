@@ -6,7 +6,7 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:31:25 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/11/16 19:31:38 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/11/19 15:09:41 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PUSH_SWAP_H
@@ -44,15 +44,18 @@ void	rra(t_array *arr);
 void	rrb(t_array *arr);
 void	rrr(t_array *arr);
 
+void	init_a(t_array *arr);
+void	radix_sort(t_array *arr);
+
 void	sort(t_array *arr);
 void	sort2(int *t, t_array *arr);
 int		**get_pieces(t_array *arr);
 int		*reinit_tempo(int *tempo, int arr_size, t_array *arr);
-int		*sort_tempo(int *tempo, t_array *arr);
+int		*sort_tempo(int *tempo, int size);
 int		check_small(t_array *arr);
 int		check_second(t_array *arr);
-int		is_sort(t_array *arr, int *array);
+int		is_sort(int size, int *array);
 int		invert_sort(t_array *arr, int *array);
-int		three_nb(t_array *arr);
+int		sort_three(t_array *arr);
 
 #endif

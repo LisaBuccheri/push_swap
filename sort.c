@@ -6,7 +6,7 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:50:05 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/11/15 14:40:09 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/11/19 10:53:16 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -89,10 +89,11 @@ void	sort(t_array *arr)
 				pb(arr);
 				i -= 1;
 			}
-			else if (i > arr->size_a / 2)
+			if (i >= arr->size_a / 2)
 				rra(arr);
 			else
 				ra(arr);
+			printf("%d", i);
 			j++;
 		}
 		if (j == i && arr->a[0] == small_int)
@@ -101,7 +102,7 @@ void	sort(t_array *arr)
 			if (arr->b[1] > arr->b[0])
 				sb(arr);
 		}
-		if (is_sort(arr, arr->a) == 1)
+		if (is_sort(arr->size_a, arr->a) == 1)
 			break ;
 	}
 	if (arr->a[0] > arr->a[1])
