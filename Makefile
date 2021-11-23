@@ -11,7 +11,7 @@ FLAGS = -Wall -Werror -Wextra
 CC = gcc
 
 .c.o:
-	$(CC) -I $(INCLUDE) -c $< -o $(<:.c=.o)
+	$(CC) $(FLAGS) -I $(INCLUDE) -c $< -o $(<:.c=.o)
 
 all: $(NAME)
 

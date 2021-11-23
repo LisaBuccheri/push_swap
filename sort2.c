@@ -6,10 +6,10 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 09:08:18 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/11/19 09:39:58 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/11/22 20:33:31 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
- #include "push_swap.h"
+#include "push_swap.h"
 
 int	*sort_tempo(int *tempo, int size)
 {
@@ -20,7 +20,7 @@ int	*sort_tempo(int *tempo, int size)
 	while (is_sort(size, tempo) != 1)
 	{
 		i = 0;
-		while (i < size - 1) 
+		while (i < size - 1)
 		{
 			if (tempo[i] > tempo[i + 1])
 			{
@@ -54,7 +54,6 @@ void	sort2(int *t, t_array *arr)
 {
 	int	a_index;
 	int	mid;
-	//int	i;
 	int	j;
 
 	a_index = 0;
@@ -76,7 +75,7 @@ void	sort2(int *t, t_array *arr)
 		}
 		else if (a_index < mid)
 		{
-			j = 0; 
+			j = 0;
 			if (arr->a[0] >= t[mid] && j < arr->size_a && a_index < mid)
 			{
 				ra(arr);
@@ -112,28 +111,3 @@ void	sort2(int *t, t_array *arr)
 			pa(arr);
 	}
 }
-/*
-int	**get_pieces(t_array *arr)
-{
-	int	**pieces;
-	int	a_size;
-	int	p_size;
-	int	i;
-
-	i = -1;
-	p_size = 0;
-	a_size = arr->size_a;
-	while (a_size / 2 > 0)
-	{
-		a_size /= 2;
-		p_size++;
-	}
-	pieces = (int **)malloc(p_size * sizeof(int *));
-	a_size = arr->size_a;
-	while (++i < p_size)
-	{
-		a_size /= 2;
-		pieces[i] = malloc(a_size * sizeof(int));
-	}
-	return (pieces);
-}*/

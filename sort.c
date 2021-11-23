@@ -6,7 +6,7 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:50:05 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/11/19 10:53:16 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/11/22 20:36:39 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -35,7 +35,6 @@ int	check_small(t_array *arr)
 			second = arr->a[i];
 		i++;
 	}
-	printf("\nsmall : %d\n", nb);
 	return (nb);
 }
 
@@ -63,7 +62,6 @@ int	check_second(t_array *arr)
 			second = arr->a[i];
 		i++;
 	}
-	printf("\nsecond %d \n", second);
 	return (second);
 }
 
@@ -93,7 +91,6 @@ void	sort(t_array *arr)
 				rra(arr);
 			else
 				ra(arr);
-			printf("%d", i);
 			j++;
 		}
 		if (j == i && arr->a[0] == small_int)
