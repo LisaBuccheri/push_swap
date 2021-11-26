@@ -6,27 +6,29 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 11:35:20 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/11/22 20:23:45 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/11/26 13:28:40 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
+#include <stdio.h>
 
 void	init_a(t_array *arr)
 {
 	int	i;
 	int	j;
 
-	i = 0;
-	while (i < arr->g_size)
+	i = -1;
+	while (++i < arr->g_size)
 	{
-		j = 0;
-		while (j < arr->g_size)
+		j = -1;
+		while (++j < arr->g_size)
 		{
-			if (arr->g_arr[i] == arr->a[j])
-				arr->a[j] = i;
-			j++;
+			if (arr->g_arr[j] == arr->a[i])
+			{
+				arr->a[i] = j;
+				break ;
+			}
 		}
-		i++;
 	}
 }
 
@@ -43,26 +45,6 @@ int	max_binary(t_array *arr)
 		max_binary++;
 	}
 	return (++max_binary);
-}
-
-int	max_push(t_array *arr, int j)
-{
-	int	i;
-	int	nb;
-
-	i = 0;
-	nb = 0;
-	while (i < arr->size_a)
-	{
-		if ((arr->a[i] >> j) & 1)
-			i++;
-		else
-		{
-			nb++;
-			i++;
-		}
-	}
-	return (nb);
 }
 
 void	radix_sort(t_array *arr)

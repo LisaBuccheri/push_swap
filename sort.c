@@ -6,7 +6,7 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:50:05 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/11/22 20:36:39 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:54:32 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -65,45 +65,65 @@ int	check_second(t_array *arr)
 	return (second);
 }
 
-void	sort(t_array *arr)
+void	sort_four(int i, int small_int, t_array *arr)
+{
+	while (arr->a[i] != small_int)
+		i++;
+	while (small_int != arr->a[0])
+	{
+		if (i >= arr->size_a / 2)
+			rra(arr);
+		else
+			ra(arr);
+	}
+	if (arr->a[0] == small_int)
+		pb(arr);
+}
+
+void	sort_five(int i, int small_int, int second_small, t_array *arr)
+{
+	while (arr->a[i] != small_int)
+		i++;
+	while (small_int != arr->a[0])
+	{
+		if (i >= arr->size_a / 2)
+			rra(arr);
+		else
+			ra(arr);
+	}
+	if (arr->a[0] == small_int)
+		pb(arr);
+	i = 0;
+	while (arr->a[i] != small_int)
+		i++;
+	while (second_small != arr->a[0])
+	{
+		if (i >= arr->size_a / 2)
+			rra(arr);
+		else
+			ra(arr);
+	}
+	if (arr->a[0] == second_small)
+		pb(arr);
+}
+
+void	sort_little(int nb, t_array *arr)
 {
 	int	i;
-	int	j;
 	int	small_int;
 	int	second_small;
 
-	while (arr->size_a != 2)
+	i = 0;
+	small_int = check_small(arr);
+	second_small = check_second(arr);
+	if (nb >= 3 && nb <= 5)
 	{
-		i = 0;
-		j = 0;
-		small_int = check_small(arr);
-		second_small = check_second(arr);
-		while (arr->a[i] != small_int)
-			i++;
-		while (small_int != arr->a[0])
-		{
-			if (second_small == arr->a[0] && arr->size_a > 3)
-			{
-				pb(arr);
-				i -= 1;
-			}
-			if (i >= arr->size_a / 2)
-				rra(arr);
-			else
-				ra(arr);
-			j++;
-		}
-		if (j == i && arr->a[0] == small_int)
-		{
-			pb(arr);
-			if (arr->b[1] > arr->b[0])
-				sb(arr);
-		}
-		if (is_sort(arr->size_a, arr->a) == 1)
-			break ;
+		if (nb == 4)
+			sort_four(i, small_int, arr);
+		else if (nb == 5)
+			sort_five(i, small_int, second_small, arr);
+		sort_three(arr);
+		while (arr->size_b > 0)
+			pa(arr);
 	}
-	if (arr->a[0] > arr->a[1])
-		sa(arr);
-	while (arr->size_b != 0)
-		pa(arr);
 }

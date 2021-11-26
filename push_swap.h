@@ -6,14 +6,13 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:31:25 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/11/22 20:57:46 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/11/26 13:12:56 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 typedef struct type_array
 {
@@ -29,8 +28,10 @@ typedef struct type_array
 int		ft_atoi(const char *str);
 int		*init_array(int argc, char *argv[], char arr);
 int		is_sort(int size, int *array);
-int		is_twice(int argc, t_array *arr);
-int		is_digit(t_array *arr);
+int		is_digit(char *str);
+int		ft_error(t_array *arr);
+int		ft_strlen(char *str);
+int		str_cmp(int argc, char *argv[]);
 
 void	ft_putchar(char c);
 void	ft_putnbr(int n);
@@ -45,18 +46,18 @@ void	rr(t_array *arr);
 void	rra(t_array *arr);
 void	rrb(t_array *arr);
 void	rrr(t_array *arr);
+void	sort_four(int i, int small_int, t_array *arr);
+void	sort_five(int i, int small_int, int second_small, t_array *arr);
 
 void	init_a(t_array *arr);
+void	init_struct(int argc, char **argv, t_array *arr);
 void	radix_sort(t_array *arr);
-
-void	sort(t_array *arr);
-void	sort2(int *t, t_array *arr);
+void	sort_little(int nb, t_array *arr);
+void	ft_free(t_array *arr);
 
 int		*sort_tempo(int *tempo, int size);
 int		sort_three(t_array *arr);
-//int		*reinit_tempo(int *tempo, int arr_size, t_array *arr);
 int		check_small(t_array *arr);
 int		check_second(t_array *arr);
-int		invert_sort(t_array *arr, int *array);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 16:18:11 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/11/07 15:20:40 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/11/24 11:17:26 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -28,7 +28,7 @@ void	ra(t_array *arr)
 		if (i == len)
 			arr->a[i] = stock;
 	}
-	printf("ra");
+	write(1, "ra\n", 3);
 }
 
 void	rb(t_array *arr)
@@ -48,11 +48,12 @@ void	rb(t_array *arr)
 		if (i == len)
 			arr->b[i] = stock;
 	}
-	printf("rb");
+	write(1, "rb\n", 3);
 }
 
 void	rr(t_array *arr)
 {
 	ra(arr);
 	rb(arr);
+	arr->nb_move--;
 }
