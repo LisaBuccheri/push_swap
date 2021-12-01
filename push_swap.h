@@ -6,7 +6,7 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:31:25 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/11/26 13:12:56 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/12/01 14:48:33 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PUSH_SWAP_H
@@ -25,13 +25,14 @@ typedef struct type_array
 	int	nb_move;
 }		t_array;
 
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, int *stat);
 int		*init_array(int argc, char *argv[], char arr);
 int		is_sort(int size, int *array);
 int		is_digit(char *str);
-int		ft_error(t_array *arr);
+//int		ft_error(t_array *arr);
 int		ft_strlen(char *str);
 int		str_cmp(int argc, char *argv[]);
+int		is_duplicate(t_array *arr);
 
 void	ft_putchar(char c);
 void	ft_putnbr(int n);
@@ -50,10 +51,14 @@ void	sort_four(int i, int small_int, t_array *arr);
 void	sort_five(int i, int small_int, int second_small, t_array *arr);
 
 void	init_a(t_array *arr);
-void	init_struct(int argc, char **argv, t_array *arr);
+int		init_struct(int argc, char **argv, t_array *arr);
 void	radix_sort(t_array *arr);
 void	sort_little(int nb, t_array *arr);
-void	ft_free(t_array *arr);
+int		ft_error(t_array *arr, int argc);
+int		ft_error_digit(int argc, char *argv[]);
+int		ft_error_duplicate(t_array *arr);
+int		ft_error_int(int stat, int *arr);
+int		ft_free(t_array *arr);
 
 int		*sort_tempo(int *tempo, int size);
 int		sort_three(t_array *arr);

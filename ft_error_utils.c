@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_error_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 20:28:48 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/11/26 13:37:19 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/12/01 14:48:41 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
-
+/*
 int	ft_error(t_array *arr)
 {
 	if (is_sort(arr->size_a, arr->a) == 1)
 		return (0);
 	return (1);
-}
+}*/
 
 int	ft_strlen(char *str)
 {
@@ -28,32 +28,20 @@ int	ft_strlen(char *str)
 	return (len);
 }
 
-int	str_cmp(int argc, char *argv[])
+int	is_duplicate(t_array *arr)
 {
 	int	i;
 	int	j;
-	int	k;
-	int	l;
-	int	dup;
+	int	temp;
 
-	i = 0;
-	j = 0;
-	dup = 0;
-	// la fonction ne verifie pas tous les nombres elle avance en prennent le 1e et 2e puis le 2e et 3e
-	while (++i < argc - 1)
+	i = -1;
+	while (++i < arr->size_a - 1)
 	{
-		k = i + 1;
-		l = 0;
-		while (argv[i][j] && argv[k][l])
-		{
-			if (argv[i][j] == argv[k][l])
-				dup ++;
-			j++;
-			l++;
-		}
-		if (dup == ft_strlen(argv[i]))
-			return (0);
-		k++;
+		j = i;
+		temp = arr->a[i];
+		while (++j < arr->size_a)
+			if (temp == arr->a[j])
+				return (0);
 	}
 	return (1);
 }

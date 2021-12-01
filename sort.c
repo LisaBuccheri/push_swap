@@ -6,10 +6,11 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:50:05 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/11/24 17:54:32 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/12/01 16:06:34 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
+#include <stdio.h>
 
 int	check_small(t_array *arr)
 {
@@ -86,7 +87,7 @@ void	sort_five(int i, int small_int, int second_small, t_array *arr)
 		i++;
 	while (small_int != arr->a[0])
 	{
-		if (i >= arr->size_a / 2)
+		if (i > arr->size_a / 2)
 			rra(arr);
 		else
 			ra(arr);
@@ -94,11 +95,11 @@ void	sort_five(int i, int small_int, int second_small, t_array *arr)
 	if (arr->a[0] == small_int)
 		pb(arr);
 	i = 0;
-	while (arr->a[i] != small_int)
+	while (arr->a[i] != second_small)
 		i++;
 	while (second_small != arr->a[0])
 	{
-		if (i >= arr->size_a / 2)
+		if (i > arr->size_a / 2)
 			rra(arr);
 		else
 			ra(arr);
