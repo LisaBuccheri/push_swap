@@ -10,9 +10,9 @@ SRCS_B = push_swap.c \
 		 ft_atoi.c \
 		 ft_error.c \
 		 ft_error_utils.c \
-		 reverse_rotate.c \
-		 rotate.c \
-		 swap_push.c \
+		 $(DIR_C)rr.c \
+		 $(DIR_C)r.c \
+		 $(DIR_C)sp.c \
 		 $(DIR_C)get_next_line.c \
 		 $(DIR_C)get_next_line_utils.c \
 		 $(DIR_C)main.c
@@ -23,7 +23,7 @@ OBJ_B = $(SRCS_B:.c=.o)
 
 INCLUDE = push_swap.h
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra #-g3 -fsanitize=address
 
 CC = gcc
 

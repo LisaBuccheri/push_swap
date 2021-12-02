@@ -6,7 +6,7 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:18:25 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/12/01 17:41:28 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/12/02 18:03:54 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -41,6 +41,8 @@ int	*init_array(int argc, char *argv[], char array)
 	int	stat;
 
 	arr = (int *)malloc((argc + 1) * sizeof(int));
+	if (!arr)
+		return (0);
 	i = -1;
 	if (array == 'a')
 	{
@@ -64,7 +66,7 @@ int	init_struct(int argc, char **argv, t_array *arr)
 {
 	arr->a = init_array(argc, argv, 'a');
 	if (!arr->a)
-		return (ft_free(arr));
+		return (0);
 	arr->size_a = argc - 1;
 	arr->b = init_array(argc, argv, 'b');
 	if (!arr->b)
@@ -72,9 +74,11 @@ int	init_struct(int argc, char **argv, t_array *arr)
 	arr->size_b = 0;
 	arr->nb_move = 0;
 	arr->g_arr = init_array(argc, argv, 'a');
+	if (!arr->g_arr)
+		return (ft_free(arr));
 	arr->g_size = argc - 1;
 	arr->g_arr = sort_tempo(arr->g_arr, arr->g_size);
-	return (0);
+	return (1);
 }
 
 int	ft_free(t_array *arr)
