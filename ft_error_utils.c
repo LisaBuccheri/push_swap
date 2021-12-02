@@ -6,27 +6,10 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 20:28:48 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/12/01 14:48:41 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/12/01 18:22:39 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
-/*
-int	ft_error(t_array *arr)
-{
-	if (is_sort(arr->size_a, arr->a) == 1)
-		return (0);
-	return (1);
-}*/
-
-int	ft_strlen(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
 
 int	is_duplicate(t_array *arr)
 {

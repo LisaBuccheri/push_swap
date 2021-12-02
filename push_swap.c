@@ -6,7 +6,7 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:18:25 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/12/01 16:05:42 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/12/01 17:41:28 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -85,24 +85,5 @@ int	ft_free(t_array *arr)
 		free(arr->b);
 	if (arr->g_arr)
 		free(arr->g_arr);
-	return (0);
-}
-
-int	main(int argc, char *argv[])
-{
-	t_array	arr;
-
-	if (ft_error_digit(argc, argv) == 0)
-		return (ft_free(&arr));
-	init_struct(argc, argv, &arr);
-	if (ft_error(&arr, argc) == 0)
-		return (ft_free(&arr));
-	else if (argc == 3 && argv[2] > argv[3])
-		sa(&arr);
-	else if (argc > 3 && argc < 7)
-		sort_little(argc - 1, &arr);
-	else
-		radix_sort(&arr);
-	ft_free(&arr);
 	return (0);
 }

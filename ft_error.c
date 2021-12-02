@@ -6,16 +6,18 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 13:42:32 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/12/01 16:03:56 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/12/01 18:39:21 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int	ft_error(t_array *arr, int argc)
+int	ft_error(t_array *arr, int argc, int status)
 {
 	if (ft_error_duplicate(arr) == 0)
 		return (0);
-	else if (argc == 1 || is_sort(arr->size_a, arr->a))
+	else if (argc == 1)
+		return (0);
+	else if (is_sort(arr->size_a, arr->a) && status == 1)
 		return (0);
 	return (1);
 }
