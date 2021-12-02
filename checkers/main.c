@@ -6,7 +6,7 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 16:37:28 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/12/02 21:35:31 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/12/02 22:44:29 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -50,27 +50,27 @@ void	compare_op2(char *str, t_array *arr)
 void	compare_op(char *str, t_array *arr)
 {
 	if (ft_strcmp(str, "sa\n"))
-		sa(arr);
+		s_a(arr);
 	else if (ft_strcmp(str, "sb\n"))
-		sb(arr);
+		s_b(arr);
 	else if (ft_strcmp(str, "ss\n"))
-		ss(arr);
+		s_s(arr);
 	else if (ft_strcmp(str, "pa\n"))
-		pa(arr);
+		p_a(arr);
 	else if (ft_strcmp(str, "pb\n"))
-		pb(arr);
+		p_b(arr);
 	else if (ft_strcmp(str, "ra\n"))
-		ra(arr);
+		r_a(arr);
 	else if (ft_strcmp(str, "rb\n"))
-		rb(arr);
+		r_b(arr);
 	else if (ft_strcmp(str, "rr\n"))
-		rr(arr);
+		r_r(arr);
 	else if (ft_strcmp(str, "rra\n"))
-		rra(arr);
+		r_ra(arr);
 	else if (ft_strcmp(str, "rrb\n"))
-		rrb(arr);
+		r_rb(arr);
 	else if (ft_strcmp(str, "rrr\n"))
-		rrr(arr);
+		r_rr(arr);
 	else
 		compare_op2(str, arr);
 }

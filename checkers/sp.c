@@ -6,12 +6,12 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:38:50 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/12/02 11:30:05 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/12/02 22:48:00 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
 
-void	sa(t_array *arr)
+void	s_a(t_array *arr)
 {
 	int	swap_n;
 
@@ -24,7 +24,7 @@ void	sa(t_array *arr)
 	}
 }
 
-void	sb(t_array *arr)
+void	s_b(t_array *arr)
 {
 	int	swap_n;
 
@@ -37,14 +37,14 @@ void	sb(t_array *arr)
 	}
 }
 
-void	ss(t_array *arr)
+void	s_s(t_array *arr)
 {
-	sa(arr);
-	sb(arr);
+	s_a(arr);
+	s_b(arr);
 	arr->nb_move--;
 }
 
-void	pa(t_array *arr)
+void	p_a(t_array *arr)
 {
 	int	i;
 	int	len_a;
@@ -72,7 +72,7 @@ void	pa(t_array *arr)
 	arr->size_b--;
 }
 
-void	pb(t_array *arr)
+void	p_b(t_array *arr)
 {
 	int	i;
 	int	len_a;

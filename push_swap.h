@@ -6,7 +6,7 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:31:25 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/12/01 18:38:52 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/12/02 22:46:49 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PUSH_SWAP_H
@@ -45,21 +45,32 @@ void	rr(t_array *arr);
 void	rra(t_array *arr);
 void	rrb(t_array *arr);
 void	rrr(t_array *arr);
+
+void	s_a(t_array *arr);
+void	s_b(t_array *arr);
+void	s_s(t_array *arr);
+void	p_a(t_array *arr);
+void	p_b(t_array *arr);
+void	r_a(t_array *arr);
+void	r_b(t_array *arr);
+void	r_r(t_array *arr);
+void	r_ra(t_array *arr);
+void	r_rb(t_array *arr);
+void	r_rr(t_array *arr);
+
 void	sort_four(int i, int small_int, t_array *arr);
 void	sort_five(int i, int small_int, int second_small, t_array *arr);
-
-void	init_a(t_array *arr);
-int		init_struct(int argc, char **argv, t_array *arr);
-void	radix_sort(t_array *arr);
 void	sort_little(int nb, t_array *arr);
+void	radix_sort(t_array *arr);
+void	init_a(t_array *arr);
 
+int		init_struct(int argc, char **argv, t_array *arr);
 int		ft_error(t_array *arr, int argc, int status);
 int		ft_error_digit(int argc, char *argv[]);
 int		ft_error_duplicate(t_array *arr);
 int		ft_error_int(int stat, int *arr);
 int		ft_free(t_array *arr);
 int		max_binary(t_array *arr);
-
 int		*sort_tempo(int *tempo, int size);
 int		sort_three(t_array *arr);
 int		check_small(t_array *arr);

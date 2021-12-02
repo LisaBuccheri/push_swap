@@ -6,12 +6,12 @@
 /*   By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 16:18:22 by lbuccher          #+#    #+#             */
-/*   Updated: 2021/12/02 11:29:33 by lbuccher         ###   ########.fr       */
+/*   Updated: 2021/12/02 22:48:28 by lbuccher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
 
-void	rra(t_array *arr)
+void	r_ra(t_array *arr)
 {
 	int	i;
 	int	len;
@@ -30,7 +30,7 @@ void	rra(t_array *arr)
 	}
 }
 
-void	rrb(t_array *arr)
+void	r_rb(t_array *arr)
 {
 	int	i;
 	int	len;
@@ -49,9 +49,9 @@ void	rrb(t_array *arr)
 	}
 }
 
-void	rrr(t_array *arr)
+void	r_rr(t_array *arr)
 {
-	rra(arr);
-	rrb(arr);
+	r_ra(arr);
+	r_rb(arr);
 	arr->nb_move--;
 }

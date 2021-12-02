@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: lbuccher <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/02 23:30:03 by lbuccher          #+#    #+#              #
+#    Updated: 2021/12/02 23:30:05 by lbuccher         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = push_swap
 
 NAME_B = checker
@@ -23,7 +35,7 @@ OBJ_B = $(SRCS_B:.c=.o)
 
 INCLUDE = push_swap.h
 
-FLAGS = -Wall -Werror -Wextra #-g3 -fsanitize=address
+FLAGS = -Wall -Werror -Wextra
 
 CC = gcc
 
