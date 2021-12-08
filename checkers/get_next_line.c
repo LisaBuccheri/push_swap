@@ -53,7 +53,7 @@ char	*get_next_buffer(char *mem_buffer)
 	j = 0;
 	while (mem_buffer && mem_buffer[i] && mem_buffer[i] != '\n')
 		i++;
-	if (!mem_buffer[i])
+	if (!mem_buffer[++i])
 	{
 		free(mem_buffer);
 		return (NULL);
