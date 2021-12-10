@@ -21,7 +21,7 @@ int	ft_strcmp(char *s1, char *s2, int len)
 		return (1);
 	while (s1 && s1[i] == s2[i] && i < (size_t)len)
 		i++;
-	if (i - 1 == ft_strlen(s1))
+	if (i == ft_strlen(s1))
 		return (1);
 	return (0);
 }
@@ -53,27 +53,27 @@ void	compare_op2(char *str, t_array *arr)
 
 void	compare_op(char *str, t_array *arr)
 {
-	if (ft_strcmp(str, "sa\n", 4))
+	if (ft_strcmp(str, "sa\n", 3))
 		s_a(arr);
-	else if (ft_strcmp(str, "sb\n", 4))
+	else if (ft_strcmp(str, "sb\n", 3))
 		s_b(arr);
-	else if (ft_strcmp(str, "ss\n", 4))
+	else if (ft_strcmp(str, "ss\n", 3))
 		s_s(arr);
-	else if (ft_strcmp(str, "pa\n", 4))
+	else if (ft_strcmp(str, "pa\n", 3))
 		p_a(arr);
-	else if (ft_strcmp(str, "pb\n", 4))
+	else if (ft_strcmp(str, "pb\n", 3))
 		p_b(arr);
-	else if (ft_strcmp(str, "ra\n", 4))
+	else if (ft_strcmp(str, "ra\n", 3))
 		r_a(arr);
-	else if (ft_strcmp(str, "rb\n", 4))
+	else if (ft_strcmp(str, "rb\n", 3))
 		r_b(arr);
-	else if (ft_strcmp(str, "rr\n", 4))
+	else if (ft_strcmp(str, "rr\n", 3))
 		r_r(arr);
-	else if (ft_strcmp(str, "rra\n", 5))
+	else if (ft_strcmp(str, "rra\n", 4))
 		r_ra(arr);
-	else if (ft_strcmp(str, "rrb\n", 5))
+	else if (ft_strcmp(str, "rrb\n", 4))
 		r_rb(arr);
-	else if (ft_strcmp(str, "rrr\n", 5))
+	else if (ft_strcmp(str, "rrr\n", 4))
 		r_rr(arr);
 	else
 		compare_op2(str, arr);

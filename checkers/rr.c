@@ -38,6 +38,8 @@ void	r_rb(t_array *arr)
 
 	i = 0;
 	len = arr->size_b - 1;
+	if (arr->size_b == 0)
+		return ;
 	stock = arr->b[len];
 	arr->nb_move++;
 	while (i < len)
